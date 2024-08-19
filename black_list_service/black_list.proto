@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option go_package = "genproto/black_list";
+
+package black_list;
+
+import "common.proto";
+
+service BlackListService {
+    rpc Create (BlackListCreate) returns (Void) {}
+    rpc GetAll(GetAllBlackListReq) returns (GetAllBlackListRes) {}
+    rpc Delete (GetById) returns (Void) {}
+}
+
+message BlackListCreate {
+    string employe_id = 1;
+    string reason     = 2;
+    string added_by   = 3;
+    string action = 4;
+}
+
+message BlackListBody {
+    string employe_id = 1;
+    string reason     = 2;
+    string action = 3;
+}
+
+message BlackListRes {
+    string FullName = 1;
+    string DateOfBirth = 2;
+    string position = 3;
+    string reason   = 4;
+    string blacklisted_at = 5;
+}
+
+message GetAllBlackListReq {
+    string added_by = 1;
+    Filter filter   = 2;
+}
+
+message GetAllBlackListRes {
+    repeated BlackListRes black_lists = 1;
+}
