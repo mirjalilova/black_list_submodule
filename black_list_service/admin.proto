@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "genproto/black_list";
+option go_package = "internal/genproto/black_list";
 
 package black_list;
 

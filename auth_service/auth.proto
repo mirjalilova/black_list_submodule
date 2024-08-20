@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "genproto/auth";
+option go_package = "internal/genproto/auth";
 
 package auth;
 
