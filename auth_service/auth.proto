@@ -12,7 +12,6 @@ service AuthService {
     rpc ForgotPassword(GetByEmail) returns (Void);
     rpc ResetPassword(ResetPassReq) returns (Void);
     rpc SaveRefreshToken(RefToken) returns (Void);
-    rpc RefreshToken(GetByEmail) returns (LoginRes);
 }
 
 message RegisterReq {
@@ -36,8 +35,8 @@ message LoginReq {
 }
 
 message LoginRes {
-    string token = 1;
-    string expires_at = 2;
+    string access_token = 1;
+    string refresh_token = 2;
 }
 
 message GetByEmail {
