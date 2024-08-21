@@ -5,11 +5,13 @@ option go_package = "internal/genproto/black_list";
 package black_list;
 
 import "common.proto";
+import "auth_service/user.proto";
 
 service AdminService {
     rpc Approve (CreateHR) returns (Void) {}
     rpc ListHR (Filter) returns (GetAllHRRes) {}
     rpc Delete (GetById) returns (Void) {}
+    rpc GetAllUsers (ListUserReq) returns (ListUserRes);
 }
 
 message CreateHR {
@@ -30,3 +32,13 @@ message Hr {
     string created_at = 5;
 }
 
+message ListUserReq {
+    string username = 1;
+    string full_name = 2;
+    Filter filter = 3;
+}
+
+message ListUserRes {
+    repeated UserRes users = 1;
+    int32 count = 2;
+}
