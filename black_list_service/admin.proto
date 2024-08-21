@@ -12,10 +12,6 @@ service AdminService {
     rpc Delete (GetById) returns (Void) {}
 }
 
-message ApproveByAdmin {
-    string user_id = 1;
-}
-
 message CreateHR {
     string user_id = 1;
     string approved_by = 2;

@@ -23,26 +23,21 @@ message Employee {
   string hr_id = 6;
 }
 
-message EmployeeCreateBody {
-    string user_id = 1;
-    string position  = 2;
-}
-
 message EmployeeCreate {
-    string user_id = 1;
-    string position  = 2;
-    string hr_id = 4;
+  string user_id = 1;
+  string position  = 2;
+  string hr_id = 4;
 }
 
 message UpdateReqBody {
-    string position  = 1;
-    string hr_id   = 2;
+  string position  = 1;
+  string hr_id   = 2;
 }
 
 message UpdateReq {
-    string id = 1;
-    string position  = 2;
-    string hr_id   = 3;
+  string id = 1;
+  string position  = 2;
+  string hr_id   = 3;
 }
 
 message ListEmployeeReq {
