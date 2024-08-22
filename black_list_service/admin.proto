@@ -5,7 +5,6 @@ option go_package = "internal/genproto/black_list";
 package black_list;
 
 import "common.proto";
-import "auth_service/user.proto";
 
 service AdminService {
     rpc Approve (CreateHR) returns (Void) {}
@@ -41,4 +40,13 @@ message ListUserReq {
 message ListUserRes {
     repeated UserRes users = 1;
     int32 count = 2;
+}
+
+message UserRes{
+    string Id = 1;
+    string Username = 2;
+    string Email = 3;
+    string FullName = 4;
+    string DateOfBirth = 5;
+    string Role = 6;
 }

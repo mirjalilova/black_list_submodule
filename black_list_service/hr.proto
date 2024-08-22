@@ -26,7 +26,12 @@ message Employee {
 message EmployeeCreate {
   string user_id = 1;
   string position  = 2;
-  string hr_id = 4;
+  string hr_id = 3;
+}
+
+message EmployeeCreateBody {
+  string user_id = 1;
+  string position  = 2;
 }
 
 message UpdateReqBody {
