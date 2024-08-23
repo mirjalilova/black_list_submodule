@@ -10,6 +10,9 @@ service BlackListService {
     rpc Add (BlackListCreate) returns (Void) {}
     rpc GetAll(Filter) returns (GetAllBlackListRes) {}
     rpc Remove (RemoveReq) returns (Void) {}
+    rpc MonitoringDailyReport (Void) returns (Reports) {}
+    rpc MonitoringWeeklyReport (Void) returns (Reports) {}
+    rpc MonitoringMonthlyReport (Void) returns (Reports) {}
 }
 
 message BlackListCreate {
@@ -39,4 +42,14 @@ message GetAllBlackListRes {
 message RemoveReq {
     string employee_id = 1;
     string added_by = 2;
+}
+
+message Report {
+    string full_name = 1;
+    string blacklisted_at = 2;
+}
+
+message Reports {
+    repeated Report reports = 1;
+    int32 count = 2;
 }
