@@ -11,6 +11,7 @@ service AdminService {
     rpc ListHR (Filter) returns (GetAllHRRes) {}
     rpc Delete (GetById) returns (Void) {}
     rpc GetAllUsers (ListUserReq) returns (ListUserRes);
+    rpc ChangeRole (ChangeRoleReq) returns (Void);
 }
 
 message CreateHR {
@@ -49,4 +50,9 @@ message UserRes{
     string FullName = 4;
     string DateOfBirth = 5;
     string Role = 6;
+}
+
+message ChangeRoleReq {
+    string user_id = 1;
+    string role = 2;
 }
