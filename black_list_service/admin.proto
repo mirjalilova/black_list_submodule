@@ -40,6 +40,9 @@ message ListUserReq {
 
 message ListUserRes {
     repeated UserRes users = 1;
+}
+
+message Count {
     int32 count = 2;
 }
 
