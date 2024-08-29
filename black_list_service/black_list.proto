@@ -10,9 +10,9 @@ service BlackListService {
     rpc Add (BlackListCreate) returns (Void) {}
     rpc GetAll(Filter) returns (GetAllBlackListRes) {}
     rpc Remove (RemoveReq) returns (Void) {}
-    rpc MonitoringDailyReport (Void) returns (Reports) {}
-    rpc MonitoringWeeklyReport (Void) returns (Reports) {}
-    rpc MonitoringMonthlyReport (Void) returns (Reports) {}
+    rpc MonitoringDailyReport (Filter) returns (Reports) {}
+    rpc MonitoringWeeklyReport (Filter) returns (Reports) {}
+    rpc MonitoringMonthlyReport (Filter) returns (Reports) {}
 }
 
 message BlackListCreate {
