@@ -21,6 +21,7 @@ message Employee {
   string DateOfBirth = 4;
   string position = 5;
   string hr_id = 6;
+  string is_blocked = 7;
 }
 
 message EmployeeCreate {
