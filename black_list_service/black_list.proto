@@ -13,6 +13,7 @@ service BlackListService {
     rpc MonitoringDailyReport (Filter) returns (Reports) {}
     rpc MonitoringWeeklyReport (Filter) returns (Reports) {}
     rpc MonitoringMonthlyReport (Filter) returns (Reports) {}
+    rpc ViewLogs (Filter) returns (Logs) {}
 }
 
 message BlackListCreate {
@@ -40,5 +41,17 @@ message RemoveReq {
 
 message Reports {
     repeated Report reports = 1;
+    int32 count = 2;
+}
+
+message Log {
+    string FullName = 1;
+    string action_performed_by = 2;
+    string timestamp = 3;
+    string action = 4;
+}
+
+message Logs {
+    repeated Log logs = 1;
     int32 count = 2;
 }
