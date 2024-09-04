@@ -8,7 +8,7 @@ import "common.proto";
 
 service BlackListService {
     rpc Add (BlackListCreate) returns (Void) {}
-    rpc GetAll(Filter) returns (GetAllBlackListRes) {}
+    rpc GetAll(Filter) returns (Reports) {}
     rpc Remove (RemoveReq) returns (Void) {}
     rpc MonitoringDailyReport (Filter) returns (Reports) {}
     rpc MonitoringWeeklyReport (Filter) returns (Reports) {}
@@ -26,27 +26,16 @@ message BlackListBody {
     string reason     = 2;
 }
 
-message BlackListRes {
+message Report {
     string FullName = 1;
-    string DateOfBirth = 2;
-    string position = 3;
-    string reason   = 4;
-    string blacklisted_at = 5;
-}
-
-message GetAllBlackListRes {
-    repeated BlackListRes black_lists = 1;
-    int32 count = 2;
+    string position = 2;
+    string reason   = 3;
+    string blacklisted_at = 4;
 }
 
 message RemoveReq {
     string employee_id = 1;
     string added_by = 2;
-}
-
-message Report {
-    string full_name = 1;
-    string blacklisted_at = 2;
 }
 
 message Reports {
