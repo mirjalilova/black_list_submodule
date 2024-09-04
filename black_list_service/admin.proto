@@ -9,6 +9,7 @@ import "common.proto";
 service AdminService {
     rpc Approve (CreateHR) returns (Void) {}
     rpc ListHR (Filter) returns (GetAllHRRes) {}
+    rpc GetHRById (GetById) returns (Hr) {}
     rpc Delete (GetById) returns (Void) {}
     rpc GetAllUsers (ListUserReq) returns (ListUserRes);
     rpc ChangeRole (ChangeRoleReq) returns (Void);
