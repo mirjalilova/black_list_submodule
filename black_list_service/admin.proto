@@ -12,6 +12,7 @@ service AdminService {
     rpc Delete (GetById) returns (Void) {}
     rpc GetAllUsers (ListUserReq) returns (ListUserRes);
     rpc ChangeRole (ChangeRoleReq) returns (Void);
+    rpc GetUserById(GetById) returns (UserRes);
 }
 
 message CreateHR {
